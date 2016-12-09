@@ -62,16 +62,20 @@ var work = {
 	}]
 };
 var projects = {
-  // TODO: StarKiller Base from SW7: Force Awakens. Include image of the base, or epic photo of Han & chewy in the snow with finn, or image of han dying.
 	'projects': [{
-		'title': 'Death Star',
-		'dates': '1976-1983',
-		'description': 'Assisted in destroying the Death Star TWICE. Saved the Galaxy. Restored Peace.',
-		'images': ['images/death-star.jpg']
+    'title': 'StarKiller Base',
+    'dates': '2015',
+    'description': "Led a small ground assault team of Finn and Chewy to covertly disable the base's shields. Reunited with Rey. Helped the X-wing teams by creating an opening with thermal detonators. SPOILER ALERT: Murdered by my own son, Kylo Ren.",
+    'images': ['images/han-finn.jpg']
+  },{
+    'title': 'Death Star',
+    'dates': '1976-1983',
+    'description': 'Assisted in destroying the Death Star TWICE. Saved the Galaxy. Restored Peace. Got the Princess',
+    'images': ['images/death-star.jpg']
   },{
     'title': 'Kessel Run',
     'dates': '1968',
-    'description': 'Piloting the Millenium Falcon I made the Kessel Run in less than 12 parsecs.',
+    'description': 'Piloting the Millenium Falcon made the Kessel Run in less than 12 parsecs.',
     'images': ['images/falcon.jpg']
 	}]
 };
@@ -162,21 +166,24 @@ function displayWork() {
   }
 }
 projects.display = function() {
-  for (project in projects.projects) {
+  if (projects.projects.length > 0) {
     $('#projects').append(HTMLprojectStart);
+    projects.projects.forEach(function(project) {
 
-    var formattedTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
-    var formattedDates = HTMLprojectDates.replace('%data%', projects.projects[project].dates);
-    var formattedDescription = HTMLprojectDescription.replace('%data%', projects.projects[project].description);
+      var formattedTitle = HTMLprojectTitle.replace('%data%', project.title);
+      var formattedDates = HTMLprojectDates.replace('%data%', project.dates);
+      var formattedDescription =HTMLprojectDescription.replace('%data%',project.description);
 
-    $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
+      $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
 
-    if (projects.projects[project].images.length > 0) {
-      for (image in projects.projects[project].images) {
-        var formattedImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
-        $('.project-entry:last').append(formattedImage);
+      if (project.images.length > 0) {
+        $('#projects').append(HTMLprojectStart);
+        project.images.forEach(function(image) {
+          var formattedImage = HTMLprojectImage.replace('%data%',image);
+          $('.project-entry:last').append(formattedImage);
+        });
       }
-    }
+    });
   }
 }
 
@@ -202,15 +209,15 @@ $(document).click(function(loc) {
 });
 
 //internationalize names
-function inName(name) {
-  name = name.trim().split(" ");
-  console.log(name);
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-  return name[0] +" " + name[1];
-}
-$('#main').append(internationalizeButton);
+// function inName(name) {
+//   name = name.trim().split(" ");
+//   console.log(name);
+//   name[1] = name[1].toUpperCase();
+//   name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+//
+//   return name[0] +" " + name[1];
+// }
+// $('#main').append(internationalizeButton);
 
 // google maps
 $('#mapDiv').append(googleMap);
