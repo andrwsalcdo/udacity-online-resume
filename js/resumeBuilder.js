@@ -89,14 +89,16 @@ bio.display = function () {
   var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 
   $("#header").prepend(formattedName,formattedRole);
-  $("#header").append(formattedBiopic,formattedWelcomeMsg,HTMLskillsStart);
+  $("#header").append(formattedBiopic,formattedWelcomeMsg);
   $("#topContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
 
-  //TODO use a for or forEach loop here. because SKILLS
   if (bio.skills.length > 0) {
-    // $('#header').append(HTMLskillsStart);
-    var formattedSkills = HTMLskills.replace('%data%', bio.skills);
-    $('#skills').append(formattedSkills);
+    $('#header').append(HTMLskillsStart);
+    bio.skills.forEach(function(skill) {
+      var formattedBioSkills = HTMLskills.replace('%data%', skill)
+      console.log(formattedBioSkills);
+      $('#skills').append(formattedBioSkills)
+    });
   }
 
   // contact details for the footer
