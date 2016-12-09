@@ -23,14 +23,14 @@ var education = {
     "degree": 'Masters',
     "dates": '1963',
     'location': 'New York',
-    "major": ['Smuggling'],
+    "majors": ['Smuggling'],
     'url' : ''
   }, {
     'name': 'Galaxy Piloting',
     "degree": 'BA',
     "dates": '1960-1962',
     "location": 'Chicago',
-    "major": ['Aviation'],
+    "majors": ['Aviation'],
     'url' : ''
 	}],
 	"onlineCourses": [{
@@ -96,7 +96,6 @@ bio.display = function () {
     $('#header').append(HTMLskillsStart);
     bio.skills.forEach(function(skill) {
       var formattedBioSkills = HTMLskills.replace('%data%', skill)
-      console.log(formattedBioSkills);
       $('#skills').append(formattedBioSkills)
     });
   }
@@ -108,31 +107,42 @@ bio.display = function () {
 education.display = function () {
   // start education entries.
   $("#education").append(HTMLschoolStart);
-  education.schools.forEach(function(school) {
 
+  education.schools.forEach(function(school) {
     var formattedSchoolName = HTMLschoolName.replace('%data%', school.name);
     var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', school.degree);
     var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
     var formattedSchoolDates = HTMLschoolDates.replace('%data%', school.dates);
     var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', school.location);
-    var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.major)
-    var formattedSchoolUrl = HTMLschoolURL.replace("%data%", school.url);
 
     $('.education-entry:last').append(formattedSchoolNameDegree);
-    $('.education-entry:last').append(formattedSchoolDates,formattedSchoolLocation,formattedSchoolMajor,formattedSchoolUrl);
+    $('.education-entry:last').append(formattedSchoolDates,formattedSchoolLocation);
+
+    if (school.majors.length > 0) {
+      $('#education').append(HTMLschoolStart);
+      school.majors.forEach(function(major) {
+        var formattedSchoolMajors = HTMLschoolMajor.replace('%data%', major)
+        $('.education-entry:last').append(formattedSchoolMajors)
+      });
+    }
+
+    var formattedSchoolUrl = HTMLschoolURL.replace("%data%", school.url);
+    $('.education-entry:last').append(formattedSchoolUrl);
   });
+
+
   // 1) append 'Onlinecourses<h3>' after school loop
   // 2) repeat HTMLschoolStart, so Online Courses append after main education
   $("#education").append(HTMLonlineClasses,HTMLschoolStart);
   education.onlineCourses.forEach(function(onlineCourse) {
 
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourse.title);
-     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourse.school);
-     var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
-     var formattedOnlineCourseDates = HTMLonlineDates.replace("%data%", onlineCourse.dates);
-     var formattedOnlineUrl = HTMLonlineURL.replace("%data%", onlineCourse.url);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourse.school);
+    var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+    var formattedOnlineCourseDates = HTMLonlineDates.replace("%data%", onlineCourse.dates);
+    var formattedOnlineUrl = HTMLonlineURL.replace("%data%", onlineCourse.url);
 
-     $(".education-entry:last").append(formattedOnlineTitleSchool, formattedOnlineCourseDates, formattedOnlineUrl);
+    $(".education-entry:last").append(formattedOnlineTitleSchool, formattedOnlineCourseDates, formattedOnlineUrl);
   });
 }
 function displayWork() {
@@ -160,13 +170,15 @@ projects.display = function() {
     $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
 
     if (projects.projects[project].images.length > 0) {
-     for (image in projects.projects[project].images) {
-       var formattedImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
-       $('.project-entry:last').append(formattedImage);
-     }
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
+        $('.project-entry:last').append(formattedImage);
+      }
     }
   }
 }
+
+
 
 bio.display();
 education.display();
