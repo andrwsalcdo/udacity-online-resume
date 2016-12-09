@@ -130,10 +130,10 @@ education.display = function () {
     $('.education-entry:last').append(formattedSchoolUrl);
   });
 
-
   // 1) append 'Onlinecourses<h3>' after school loop
   // 2) repeat HTMLschoolStart, so Online Courses append after main education
   $("#education").append(HTMLonlineClasses,HTMLschoolStart);
+
   education.onlineCourses.forEach(function(onlineCourse) {
 
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourse.title);
@@ -146,17 +146,19 @@ education.display = function () {
   });
 }
 function displayWork() {
-  for (job in work.jobs) {
+  if (work.jobs.length > 0) {
     $('#workExperience').append(HTMLworkStart);
+    work.jobs.forEach(function(job) {
 
-    var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    var formattedDates = HTMLworkDates.replace('%data%',work.jobs[job].dates);
-    var formattedLocation = HTMLworkLocation.replace('%data%',work.jobs[job].location);
-    var formattedDescription = HTMLworkDescription.replace('%data%',work.jobs[job].description);
+      var formattedEmployer = HTMLworkEmployer.replace('%data%', job.employer);
+      var formattedTitle = HTMLworkTitle.replace('%data%', job.title);
+      var formattedEmployerTitle = formattedEmployer + formattedTitle;
+      var formattedDates = HTMLworkDates.replace('%data%',job.dates);
+      var formattedLocation = HTMLworkLocation.replace('%data%',job.location);
+      var formattedDescription = HTMLworkDescription.replace('%data%',job.description);
 
-    $('.work-entry:last').append(formattedEmployerTitle, formattedDates, formattedLocation, formattedDescription);
+      $('.work-entry:last').append(formattedEmployerTitle, formattedDates, formattedLocation, formattedDescription);
+    });
   }
 }
 projects.display = function() {
