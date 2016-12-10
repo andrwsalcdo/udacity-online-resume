@@ -84,12 +84,17 @@ p {
   color: #333;
   line-height: 21px;
 }
-
+/*style to links--icons and text. */
 a {
-  color: #1199c3;
+  color: rgb(75, 213, 238);
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  font-weight: bolder;
+}
+/*a little transparency when mouse hovers over*/
+a:hover {
+  opacity: 0.5;
 }
 
 .welcome-message {
@@ -98,23 +103,20 @@ a {
   color: #f3f3f3;
   line-height: 28px;
 }
-
+/*blue text,*/
 #skills-h3 {
   color: rgb(75, 213, 238);
   display: none;
 }
 
-.black-blue {
-  background-color: #000;
-}
 
+/*it's really blue text.*/
 .orange-text {
   color: rgb(75, 213, 238);
 }
-
+/*it's really yellow text*/
 .white-text {
   font-weight: bold;
-  /*color: #fff;*/
   color: #ff6;
 }
 
@@ -129,18 +131,14 @@ a {
 
 
 
- /*TODO: Replace with image later */
+/*black background*/
 #header {
-  /*background-image: url(../images/falcon-gif.gif);
-  opacity: 0.85;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;*/
+  background-color: #000;
 }
-
+/*yellow to the role in #header*/
 .header-role {
   color: #ff6;
 }
-
 
 .flex-box {
   display: -webkit-flex;
@@ -183,10 +181,10 @@ span {
   padding: 5px;
 }
 
-
+/*footer text*/
 .center-text {
    text-align: center;
-   color: rgb(75, 213, 238);
+   color: #ff6;
 }
 
 

@@ -12,8 +12,11 @@ var bio = {
    		'email': 'hansolo@gmail.com',
    		'github': 'HanSolo',
    		'twitter': '@RealHanSolo',
-   		'location': 'Miami'
-   	},
+   		'location': 'Miami',
+       "facebook_logo": "<a href='https://www.facebook.com/'><i class='fa fa-facebook-official fa-2x' aria-hidden='true'></i>",
+       "github_logo": "<a href='https://www.github.com/'><i class='fa fa-github fa-2x' aria-hidden='true'></i>",
+       "linkedin_logo": "<a href='https://www.linkedin.com/'><i class='fa fa-linkedin-square fa-2x' aria-hidden='true'></i>"
+    },
    	'skills': [
    		'Smuggling', ' Piloting', ' Improvising', ' Saving the Galaxy'
    	]
@@ -107,7 +110,10 @@ bio.display = function () {
 
   // contact details for the footer
   //TODO: change into social media icons
-  $('#footerContacts').append(formattedEmail,formattedTwitter,formattedGithub)
+  // $('#footerContacts').append(formattedEmail,formattedTwitter,formattedGithub)
+  $("#footerContacts").append(bio.contacts.linkedin_logo);
+  $("#footerContacts").append(bio.contacts.facebook_logo);
+  $("#footerContacts").append(bio.contacts.github_logo);
 };
 education.display = function () {
   // start education entries.
