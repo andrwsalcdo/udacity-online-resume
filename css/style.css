@@ -3,7 +3,6 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 body,
 div,
 ul,
@@ -91,18 +90,6 @@ p {
   line-height: 21px;
   width: 50%;
 }
-/*style to links--icons and text. */
-a {
-  color: rgb(75, 213, 238);
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
-  font-weight: bolder;
-}
-/*a little transparency when mouse hovers over*/
-a:hover {
-  opacity: 0.8;
-}
 
 .welcome-message {
   font-style: italic;
@@ -136,6 +123,51 @@ a:hover {
 
 .black {
   background-color: #000;
+}
+
+/*include to avoid navbar overlaying content*/
+body {
+  padding-top: 65px !important;
+}
+/*navigation menu */
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  /*I wanted to make the links have the blue color, but it wouldn't work here with the {color: //} even tried '!important' too. no dice. so check out "a" */
+  box-sizing: border-box;
+  font-weight: bold;
+  justify-content: space-around;
+  width: 24%;
+  text-align: center;
+  text-transform: uppercase;
+}
+/*center the text in the dropdown hamburger menu*/
+.navbar-nav {
+  text-align: -webkit-center;
+}
+
+/*style to links--icons and text. */
+a {
+  /*why !important ? well, I tried to change the color of the links in the navbar, had no luck. so I thought this would override the bootstrap css.*/
+  color: rgb(75, 213, 238) !important;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  font-weight: bolder;
+}
+/*a little transparency when mouse hovers over*/
+a:hover {
+  opacity: 0.8;
 }
 
 

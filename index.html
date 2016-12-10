@@ -37,7 +37,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBxF3toI0PzzD9e4xWb4MmZdhOQn8rdiJA"></script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar">
+  <!--enabling navbar scrollspy on the body.
+  -->
   <div id="main" class="container">
     <!-- You'll be deleting this line in the course -->
 
@@ -47,6 +49,31 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
+
+
+    <!-- interactive nav bar: fixed bar
+     collapse bar in small viewports 'hamburger icon'
+       todo: scroll spy   -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav nav__list">
+            <li class="nav__item"><a href="#workExperience">Work</a></li>
+            <li class="nav__item"><a href="#projects">Projects</a></li>
+            <li class="nav__item"><a href="#education">Education</a></li>
+            <li class="nav__item"><a href="#mapDiv">Map</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div id="header" class="center-content clear-fix row">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
