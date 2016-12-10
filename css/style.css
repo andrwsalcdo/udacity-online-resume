@@ -165,11 +165,13 @@ a {
   display: block;
   font-weight: bolder;
 }
+
 /*a little transparency when mouse hovers over*/
 a:hover {
-  opacity: 0.8;
+  opacity: 0.5;
+  /*override the navbar color, couldn't figure out another way.*/
+  background-color: none !important;
 }
-
 
 /*black background*/
 #header {
