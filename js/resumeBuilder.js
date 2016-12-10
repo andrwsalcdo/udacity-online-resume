@@ -2,9 +2,10 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 var bio = {
+    'gif': 'images/falcon-gif.gif',
    	'name': 'Han Solo',
    	'role': 'Rebellion General',
-    'welcomeMessage': 'Never Tell Me the Odds',
+    'welcomeMessage': 'Never Tell Me the Odds!',
     'bioPic': 'images/han-solo.jpg',
    	'contacts' : {
       'mobile': '1-800-Han-Solo',
@@ -81,9 +82,9 @@ var projects = {
 };
 
 bio.display = function () {
-
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  var formattedNameRole = formattedName + formattedRole;
   var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
   var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
   var formattedTwitter= HTMLtwitter.replace('%data%', bio.contacts.twitter);
@@ -92,7 +93,7 @@ bio.display = function () {
   var formattedBiopic = HTMLbioPic.replace('%data%', bio.bioPic);
   var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 
-  $("#header").prepend(formattedName,formattedRole);
+  $("#header").prepend(formattedNameRole);
   $("#header").append(formattedBiopic,formattedWelcomeMsg);
   $("#topContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedGithub,formattedLocation);
 
@@ -149,7 +150,7 @@ education.display = function () {
     $(".education-entry:last").append(formattedOnlineTitleSchool, formattedOnlineCourseDates, formattedOnlineUrl);
   });
 }
-function displayWork() {
+work.display = function() {
   if (work.jobs.length > 0) {
     $('#workExperience').append(HTMLworkStart);
     work.jobs.forEach(function(job) {
@@ -191,7 +192,7 @@ projects.display = function() {
 
 bio.display();
 education.display();
-displayWork();
+work.display();
 projects.display();
 
 

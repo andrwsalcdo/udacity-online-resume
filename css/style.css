@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: rgb(75, 213, 238);
   line-height: 48px;
   display: inline;
 }
@@ -47,9 +47,9 @@ h3 {
 }
 
 h4 {
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-size: 14px;
-  color: #4a4a4a;
+  color: #fff;
   line-height: 17px;
 }
 
@@ -100,21 +100,22 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: rgb(75, 213, 238);
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.black-blue {
+  background-color: #000;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: rgb(75, 213, 238);
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  /*color: #fff;*/
+  color: #ff6;
 }
 
 .gray {
@@ -122,15 +123,26 @@ a {
   padding-bottom: 10px;
   clear:both;
 }
-
-.dark-gray {
-  background-color: #4a4a4a;
+.black {
+  background-color: #000;
 }
 
-/* TODO: Replace with image later */
+
+
+ /*TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-image: url(../images/falcon-gif.gif);
+  opacity: 0.85;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+
 }
+
+.header-role {
+  color: #ff6;
+}
+
 
 .flex-box {
   display: -webkit-flex;
@@ -173,9 +185,13 @@ span {
   padding: 5px;
 }
 
-#lets-connect {
-  text-align: center;
+
+.center-text {
+   text-align: center;
+   color: rgb(75, 213, 238);
 }
+
+
 
 /* Media queries to handle various device widths */
 
