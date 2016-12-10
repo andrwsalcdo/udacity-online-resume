@@ -83,6 +83,7 @@ p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
+  width: 50%;
 }
 /*style to links--icons and text. */
 a {
@@ -128,7 +129,6 @@ a:hover {
 .black {
   background-color: #000;
 }
-
 
 
 /*black background*/

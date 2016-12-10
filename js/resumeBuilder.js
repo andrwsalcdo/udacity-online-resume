@@ -181,8 +181,6 @@ projects.display = function() {
       var formattedDates = HTMLprojectDates.replace('%data%', project.dates);
       var formattedDescription =HTMLprojectDescription.replace('%data%',project.description);
 
-      $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
-
       if (project.images.length > 0) {
         $('#projects').append(HTMLprojectStart);
         project.images.forEach(function(image) {
@@ -190,6 +188,8 @@ projects.display = function() {
           $('.project-entry:last').append(formattedImage);
         });
       }
+      $(".project-entry:last").prepend(formattedTitle,formattedDates,formattedDescription);
+
     });
   }
 }
