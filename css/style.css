@@ -131,12 +131,10 @@ a {
 
  /*TODO: Replace with image later */
 #header {
-  background-image: url(../images/falcon-gif.gif);
+  /*background-image: url(../images/falcon-gif.gif);
   opacity: 0.85;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-
-
+  background-size: 100% 100%;*/
 }
 
 .header-role {
