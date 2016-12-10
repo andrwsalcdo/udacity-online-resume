@@ -1,3 +1,9 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body,
 div,
 ul,
@@ -95,7 +101,7 @@ a {
 }
 /*a little transparency when mouse hovers over*/
 a:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .welcome-message {
@@ -121,11 +127,13 @@ a:hover {
   color: #ff6;
 }
 
+/*it's really a white background :D */
 .gray {
-  background-color: #f3f3f3;
+  background-color: #fff;
   padding-bottom: 10px;
   clear:both;
 }
+
 .black {
   background-color: #000;
 }
@@ -134,6 +142,7 @@ a:hover {
 /*black background*/
 #header {
   background-color: #000;
+  background-size: cover;
 }
 /*yellow to the role in #header*/
 .header-role {
@@ -152,10 +161,12 @@ a:hover {
   display: table-cell;
 }
 .flex-column {
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 10px;
+  justify-content: space-around;
 }
 
 .center-content {
@@ -187,6 +198,17 @@ span {
    color: #ff6;
 }
 
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
 
 
 /* Media queries to handle various device widths */
@@ -196,6 +218,7 @@ span {
     margin-top: 5%;
   }
 }
+
 
 @media only screen and (max-width:900px) {
   .biopic {
@@ -215,17 +238,6 @@ span {
   }
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
