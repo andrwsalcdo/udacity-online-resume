@@ -118,7 +118,7 @@ function initializeMap() {
   For the map to be displayed, the googleMap var must be
   appended to #mapDiv in resumeBuilder.js.
   */
-  googleMap = new google.maps.Map(document.querySelector('#map'), mapOptions);
+  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
   /*
@@ -249,5 +249,5 @@ window.addEventListener('load', initializeMap);
 // and adjust map bounds
 // Make sure the map bounds get updated on page resize
 window.addEventListener('resize', function(e) {
- map.fitBounds(mapBounds);
+map.fitBounds(mapBounds);
 });
