@@ -250,4 +250,4 @@ $(document).click(function(loc) {
 // $('#main').append(internationalizeButton);
 
 // google maps
-$('#mapDiv').append(map);
+$('#mapDiv').append(googleMap);
