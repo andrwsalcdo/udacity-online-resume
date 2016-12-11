@@ -6,7 +6,7 @@ var bio = {
    	'name': 'Han Solo',
    	'role': 'Rebellion General',
     'welcomeMessage': 'Never Tell Me the Odds!',
-    'bioPic': 'images/han-solo.jpg',
+    'bioPic': 'images/hanchewy1.gif',
    	'contacts' : {
       'mobile': '1-800-Han-Solo',
    		'email': 'hansolo@gmail.com',
@@ -69,18 +69,18 @@ var projects = {
 	'projects': [{
     'title': 'StarKiller Base',
     'dates': '2015',
-    'description': "Led a small ground assault team of Finn and Chewy to covertly disable the base's shields. Reunited with Rey. Helped the X-wing teams by creating an opening with thermal detonators. SPOILER ALERT: Murdered by my own son, Kylo Ren.",
-    'images': ['images/han-finn.jpg']
+    'description': "Led a small team to disable the base's shields.And...Murdered by my own son, Kylo Ren.",
+    'images': ['images/han-kylo1.gif']
   },{
     'title': 'Death Star',
     'dates': '1976-1983',
     'description': 'Assisted in destroying the Death Star TWICE. Saved the Galaxy. Restored Peace. Got the Princess',
-    'images': ['images/death-star.jpg']
+    'images': ['images/yahoo11.gif']
   },{
     'title': 'Kessel Run',
     'dates': '1968',
     'description': 'Piloting the Millenium Falcon made the Kessel Run in less than 12 parsecs.',
-    'images': ['images/falcon.jpg']
+    'images': ['images/wink11.gif']
 	}]
 };
 
@@ -176,7 +176,6 @@ projects.display = function() {
   if (projects.projects.length > 0) {
     $('#projects').append(HTMLprojectStart);
     projects.projects.forEach(function(project) {
-
       var formattedTitle = HTMLprojectTitle.replace('%data%', project.title);
       var formattedDates = HTMLprojectDates.replace('%data%', project.dates);
       var formattedDescription =HTMLprojectDescription.replace('%data%',project.description);

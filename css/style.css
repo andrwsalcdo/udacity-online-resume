@@ -102,6 +102,26 @@ p {
   color: rgb(75, 213, 238);
   display: none;
 }
+/*next few css lines with 'project-entry' will be trying to get the projects to display horizontally across the div*/
+
+/*to get rid of the 1st HTMLprojectStart div, it doesn't have data of any kide. as seen here: if (projects.projects.length > 0) {
+  -----$('#projects').append(HTMLprojectStart); ------
+  projects.projects.forEach(function(project) {*/
+.project-entry.col-md-4:first-of-type {
+  display: none;
+}
+/*increase the <p> width*/
+.project-entry > p {
+  width: 100%;
+}
+
+.project-entry {
+  /*i have a huge problem with images. any images that aren't placekitten.com causes me hours of headaches. this is to keep the images from overflowing their div*/
+  overflow: hidden;
+  display: inline-block;
+  float: none;
+}
+
 
 
 /*it's really blue text.*/
