@@ -69,7 +69,7 @@ var projects = {
 	'projects': [{
     'title': 'StarKiller Base',
     'dates': '2015',
-    'description': "Led a small team to disable the base's shields.And...Murdered by my own son, Kylo Ren.",
+    'description': "Led a small team to disable the base's shields.And...Spoiler Alert!",
     'images': ['images/han-kylo1.gif']
   },{
     'title': 'Death Star',

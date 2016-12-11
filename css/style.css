@@ -17,6 +17,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+  font-size: 16px; 
 }
 
 .clear-fix {
@@ -27,6 +28,10 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+}
+/*black up the fiexed navbar */
+nav {
+  background-color: #000 !important;
 }
 
 h1 {
@@ -39,7 +44,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #f3f3f3;
   line-height: 29px;
   padding: 10px;
 }
@@ -47,7 +52,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #f3f3f3;
   line-height: 22px;
 }
 
@@ -70,7 +75,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f3f3f3;
   line-height: 16px;
   float: left;
 }
@@ -78,7 +83,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f3f3f3;
   line-height: 16px;
   float: right;
 
@@ -86,9 +91,9 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #f3f3f3;
   line-height: 21px;
-  width: 50%;
+  width: 100%;
 }
 
 .welcome-message {
@@ -134,20 +139,23 @@ p {
   color: #ff6;
 }
 
-/*it's really a white background :D */
+/*work & education ---it's really the same background as the body :D*/
 .gray {
-  background-color: #fff;
   padding-bottom: 10px;
+  background: url(https://i.ytimg.com/vi/voWpbz1De_M/maxresdefault.jpg);
   clear:both;
 }
 
+/*footer ----it's really the same background as the body :D*/
 .black {
-  background-color: #000;
+  background: url(https://i.ytimg.com/vi/voWpbz1De_M/maxresdefault.jpg);
 }
 
-/*include to avoid navbar overlaying content*/
+/*include to avoid navbar overlaying content
+stars background */
 body {
-  padding-top: 65px !important;
+  padding-top: 70px !important;
+    background: url(https://i.ytimg.com/vi/voWpbz1De_M/maxresdefault.jpg);
 }
 /*navigation menu */
 .nav {
@@ -193,11 +201,7 @@ a:hover {
   background-color: none !important;
 }
 
-/*black background*/
-#header {
-  background-color: #000;
-  background-size: cover;
-}
+
 /*yellow to the role in #header*/
 .header-role {
   color: #ff6;
@@ -248,10 +252,13 @@ span {
 
 /*footer text*/
 .center-text {
-   text-align: center;
-   color: #ff6;
+  text-align: center;
+  color: #ff6;
 }
-
+em {
+  color: #f5f5f5;
+  font-size: 1em;
+}
 #map {
   display: block;
   height: 100%;
