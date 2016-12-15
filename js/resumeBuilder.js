@@ -1,6 +1,18 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
+/*global $: true, HTMLheaderName: true,
+HTMLheaderRole, HTMLmobile: true,
+HTMLemail, HTMLtwitter, HTMLgithub, HTMLlocation,	HTMLbioPic,	HTMLwelcomeMsg,HTMLskillsStart
+	,HTMLskills,HTMLschoolStart
+,HTMLschoolStart,HTMLschoolStart,HTMLschoolName,HTMLschoolDegree,HTMLschoolDates,HTMLschoolLocation,HTMLschoolMajor,HTMLschoolURL,HTMLonlineClasses: true,
+
+HTMLonlineTitle,HTMLonlineSchool,HTMLonlineDates,HTMLonlineURL,HTMLworkStart: true,
+HTMLworkEmployer,HTMLworkTitle,HTMLworkDates,HTMLworkLocation,HTMLworkDescription,HTMLprojectStart: true,
+HTMLprojectStart,HTMLprojectTitle,HTMLprojectDates,HTMLprojectDescription,HTMLprojectImage: true,
+logClicks,googleMap: true
+
+*/
 var bio = {
    'gif': 'images/falcon-gif.gif',
    'name': 'Han Solo',
