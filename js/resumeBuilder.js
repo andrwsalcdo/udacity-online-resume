@@ -1,6 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 /*global $: true, HTMLheaderName: true,
 HTMLheaderRole, HTMLmobile: true,
 HTMLemail, HTMLtwitter, HTMLgithub, HTMLlocation,	HTMLbioPic,	HTMLwelcomeMsg,HTMLskillsStart
@@ -18,7 +15,7 @@ var bio = {
    'name': 'Han Solo',
    'role': 'Rebellion General',
    'welcomeMessage': 'Never Tell Me the Odds!',
-   'bioPic': 'images/hanchewy1.gif',
+   'biopic': 'images/hanchewy1.gif',
    'contacts': {
       'mobile': '1-800-Han-Solo',
       'email': 'hansolo@gmail.com',
@@ -40,20 +37,20 @@ var education = {
       "dates": '1963',
       'location': 'New York',
       "majors": ['Smuggling'],
-      'url': ''
+      'url': 'http://starwars.wikia.com/wiki/Han_Solo'
    }, {
       'name': 'Galaxy Piloting',
       "degree": 'BA',
       "dates": '1960-1962',
       "location": 'Chicago',
       "majors": ['Aviation'],
-      'url': ''
+      'url': 'http://starwars.wikia.com/wiki/Han_Solo'
    }],
    "onlineCourses": [{
       'title': 'Front End Web Developer Nanodegree',
       'school': 'Udacity',
       'dates': '2016-2017',
-      'url': "http://udacity.com"
+      'url': "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1&v=fe1"
    }]
 };
 var work = {
@@ -116,14 +113,14 @@ bio.display = function () {
       .github);
    var formattedLocation = HTMLlocation.replace('%data%', bio.contacts
       .location);
-   var formattedBiopic = HTMLbioPic.replace('%data%', bio.bioPic);
+   var formattedbiopic = HTMLbioPic.replace('%data%', bio.biopic);
    var formattedWelcomeMsg = HTMLwelcomeMsg.replace(
       '%data%', bio.welcomeMessage);
 
    $("#header")
       .prepend(formattedNameRole);
    $("#header")
-      .append(formattedBiopic, formattedWelcomeMsg);
+      .append(formattedbiopic, formattedWelcomeMsg);
    $("#topContacts")
       .append(formattedMobile, formattedEmail, formattedTwitter, formattedGithub,
          formattedLocation);
@@ -169,6 +166,9 @@ education.display = function () {
       var formattedSchoolNameDegree =
          formattedSchoolName +
          formattedSchoolDegree;
+      var formattedSchoolUrl =
+        formattedSchoolNameDegree.replace(
+         "#", school.url);
       var formattedSchoolDates =
          HTMLschoolDates.replace(
             '%data%', school.dates);
@@ -179,11 +179,7 @@ education.display = function () {
 
       $('.education-entry:last')
          .append(
-            formattedSchoolNameDegree
-         );
-      $('.education-entry:last')
-         .append(
-            formattedSchoolDates, formattedSchoolLocation
+            formattedSchoolUrl, formattedSchoolDates, formattedSchoolLocation
          );
 
       if (school.majors.length > 0) {
@@ -211,13 +207,6 @@ education.display = function () {
             });
       }
 
-      var formattedSchoolUrl =
-         HTMLschoolURL.replace(
-            "%data%", school.url);
-      $('.education-entry:last')
-         .append(
-            formattedSchoolUrl
-         );
    });
 
    // 1) append 'Onlinecourses<h3>' after school loop
@@ -238,19 +227,19 @@ education.display = function () {
       var formattedOnlineTitleSchool =
          formattedOnlineTitle +
          formattedOnlineSchool;
+      var formattedOnlineUrl =
+       formattedOnlineTitleSchool.replace(
+         "#", onlineCourse.url
+       );
       var formattedOnlineCourseDates =
          HTMLonlineDates.replace(
             "%data%", onlineCourse.dates
          );
-      var formattedOnlineUrl =
-         HTMLonlineURL.replace(
-            "%data%", onlineCourse.url
-         );
 
       $(".education-entry:last")
          .append(
-            formattedOnlineTitleSchool, formattedOnlineCourseDates, formattedOnlineUrl
-         );
+            formattedOnlineUrl, formattedOnlineCourseDates
+          );
    });
 };
 work.display = function () {
